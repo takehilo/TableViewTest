@@ -9,12 +9,12 @@ class RootMenuViewController: UITableViewController {
         case 0:
             vc = storyboard.instantiateViewController(withIdentifier: "MenuTableViewController")
         case 1:
-            vc = storyboard.instantiateViewController(withIdentifier: "MenuTableViewController")
+            vc = storyboard.instantiateViewController(withIdentifier: "MenuViewController")
         default:
             return
         }
 
-        present(UINavigationController(rootViewController: vc), animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }

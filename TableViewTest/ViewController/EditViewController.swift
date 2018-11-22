@@ -1,13 +1,25 @@
 import UIKit
 
 // 編集モードと左スワイプ削除
-class EditTableViewController: UITableViewController {
-    var texts = ["Hello", "World", "Hoge", "Foo", "Bar", "Baz"]
+class EditViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
 
+    var texts = ["Hello", "World", "Hoge", "Foo", "Bar", "Baz"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        navigationItem.title = "EditViewController"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
         navigationItem.rightBarButtonItem = editButtonItem
+    }
+
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
     }
 
     @objc
@@ -17,12 +29,12 @@ class EditTableViewController: UITableViewController {
 }
 
 // DataSourde
-extension EditTableViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension EditViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return texts.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = texts[indexPath.row]
         return cell
@@ -30,8 +42,8 @@ extension EditTableViewController {
 }
 
 // Delegate
-extension EditTableViewController {
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+extension EditViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if indexPath.row % 3 == 0 {
             return .delete
         } else if indexPath.row % 3 == 1 {
@@ -41,7 +53,7 @@ extension EditTableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
             print("delete")
@@ -56,11 +68,11 @@ extension EditTableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
         print("willBeginEdtingRowAt")
     }
 
-    override func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
         print("didEndEdtingRowAt")
     }
 }

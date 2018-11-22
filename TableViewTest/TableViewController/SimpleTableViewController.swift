@@ -5,6 +5,8 @@ class SimpleTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.title = "SimpleTableViewController"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
         navigationItem.rightBarButtonItem = editButtonItem
     }

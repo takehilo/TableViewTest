@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6D28950D21A6A40200F8553B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28950C21A6A40100F8553B /* MenuViewController.swift */; };
 		6D28950F21A6A43E00F8553B /* RootMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28950E21A6A43E00F8553B /* RootMenuViewController.swift */; };
+		6D28951421A6A71400F8553B /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28951321A6A71400F8553B /* SimpleViewController.swift */; };
+		6D28951621A6A74600F8553B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28951521A6A74600F8553B /* EditViewController.swift */; };
+		6D28951821A6A75300F8553B /* BatchDeletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28951721A6A75300F8553B /* BatchDeletionViewController.swift */; };
+		6D28951A21A6A76400F8553B /* SwipeActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28951921A6A76400F8553B /* SwipeActionViewController.swift */; };
 		6D63459621A40F5800B68B99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D63459521A40F5800B68B99 /* AppDelegate.swift */; };
 		6D63459821A40F5800B68B99 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D63459721A40F5800B68B99 /* SimpleTableViewController.swift */; };
 		6D63459B21A40F5800B68B99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D63459921A40F5800B68B99 /* Main.storyboard */; };
@@ -23,6 +27,10 @@
 /* Begin PBXFileReference section */
 		6D28950C21A6A40100F8553B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6D28950E21A6A43E00F8553B /* RootMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMenuViewController.swift; sourceTree = "<group>"; };
+		6D28951321A6A71400F8553B /* SimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
+		6D28951521A6A74600F8553B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		6D28951721A6A75300F8553B /* BatchDeletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDeletionViewController.swift; sourceTree = "<group>"; };
+		6D28951921A6A76400F8553B /* SwipeActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionViewController.swift; sourceTree = "<group>"; };
 		6D63459221A40F5800B68B99 /* TableViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D63459521A40F5800B68B99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D63459721A40F5800B68B99 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D28951021A6A6DD00F8553B /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D63459721A40F5800B68B99 /* SimpleTableViewController.swift */,
+				6D6345A721A4115200B68B99 /* EditTableViewController.swift */,
+				6D6345A921A41BB400B68B99 /* BatchDeletionTableViewController.swift */,
+				6DBEDF7521A5500D00489D6B /* SwipeActionTableViewController.swift */,
+			);
+			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		6D28951221A6A6FC00F8553B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D28951321A6A71400F8553B /* SimpleViewController.swift */,
+				6D28951521A6A74600F8553B /* EditViewController.swift */,
+				6D28951721A6A75300F8553B /* BatchDeletionViewController.swift */,
+				6D28951921A6A76400F8553B /* SwipeActionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		6D63458921A40F5800B68B99 = {
 			isa = PBXGroup;
 			children = (
@@ -66,14 +96,12 @@
 		6D63459421A40F5800B68B99 /* TableViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				6D28951021A6A6DD00F8553B /* TableViewController */,
+				6D28951221A6A6FC00F8553B /* ViewController */,
 				6D63459521A40F5800B68B99 /* AppDelegate.swift */,
 				6D28950E21A6A43E00F8553B /* RootMenuViewController.swift */,
 				6DBEDF7721A55E9900489D6B /* MenuTableViewController.swift */,
 				6D28950C21A6A40100F8553B /* MenuViewController.swift */,
-				6D63459721A40F5800B68B99 /* SimpleTableViewController.swift */,
-				6D6345A721A4115200B68B99 /* EditTableViewController.swift */,
-				6D6345A921A41BB400B68B99 /* BatchDeletionTableViewController.swift */,
-				6DBEDF7521A5500D00489D6B /* SwipeActionTableViewController.swift */,
 				6D63459921A40F5800B68B99 /* Main.storyboard */,
 				6D63459C21A40F5A00B68B99 /* Assets.xcassets */,
 				6D63459E21A40F5A00B68B99 /* LaunchScreen.storyboard */,
@@ -153,14 +181,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D28951621A6A74600F8553B /* EditViewController.swift in Sources */,
 				6D63459821A40F5800B68B99 /* SimpleTableViewController.swift in Sources */,
 				6DBEDF7821A55E9900489D6B /* MenuTableViewController.swift in Sources */,
 				6D63459621A40F5800B68B99 /* AppDelegate.swift in Sources */,
 				6D28950D21A6A40200F8553B /* MenuViewController.swift in Sources */,
 				6D6345AA21A41BB400B68B99 /* BatchDeletionTableViewController.swift in Sources */,
+				6D28951421A6A71400F8553B /* SimpleViewController.swift in Sources */,
+				6D28951A21A6A76400F8553B /* SwipeActionViewController.swift in Sources */,
 				6D6345A821A4115200B68B99 /* EditTableViewController.swift in Sources */,
 				6DBEDF7621A5500D00489D6B /* SwipeActionTableViewController.swift in Sources */,
 				6D28950F21A6A43E00F8553B /* RootMenuViewController.swift in Sources */,
+				6D28951821A6A75300F8553B /* BatchDeletionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

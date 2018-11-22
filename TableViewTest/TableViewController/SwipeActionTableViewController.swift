@@ -6,6 +6,8 @@ class SwipeActionTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.title = "SwipeActionTableViewController"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(back))
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(onRefreshed(sender:)), for: .valueChanged)
@@ -53,6 +55,7 @@ extension SwipeActionTableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "削除") { (action, view, completion) in
             self.texts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
         }
         action.backgroundColor = .red
