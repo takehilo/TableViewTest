@@ -1,7 +1,7 @@
 import UIKit
 
 // 一括削除
-class ViewController3: UITableViewController {
+class BatchDeletionTableViewController: UITableViewController {
     var texts = ["Hello", "World", "Hoge", "Foo", "Bar", "Baz"]
 
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class ViewController3: UITableViewController {
 }
 
 // DataSourde
-extension ViewController3 {
+extension BatchDeletionTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return texts.count
     }

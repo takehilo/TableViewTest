@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController1: UITableViewController {
+class SimpleTableViewController: UITableViewController {
     var texts = ["Hello", "World", "Hoge", "Foo", "Bar", "Baz"]
 
     override func viewDidLoad() {
@@ -16,7 +16,7 @@ class ViewController1: UITableViewController {
 }
 
 // DataSourde
-extension ViewController1 {
+extension SimpleTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return texts.count
     }

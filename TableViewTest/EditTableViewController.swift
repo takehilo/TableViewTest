@@ -1,7 +1,7 @@
 import UIKit
 
 // 編集モードと左スワイプ削除
-class ViewController2: UITableViewController {
+class EditTableViewController: UITableViewController {
     var texts = ["Hello", "World", "Hoge", "Foo", "Bar", "Baz"]
 
     override func viewDidLoad() {
@@ -17,7 +17,7 @@ class ViewController2: UITableViewController {
 }
 
 // DataSourde
-extension ViewController2 {
+extension EditTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return texts.count
     }
@@ -30,7 +30,7 @@ extension ViewController2 {
 }
 
 // Delegate
-extension ViewController2 {
+extension EditTableViewController {
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if indexPath.row % 3 == 0 {
             return .delete

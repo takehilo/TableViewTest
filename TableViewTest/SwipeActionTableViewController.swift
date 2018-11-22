@@ -1,7 +1,7 @@
 import UIKit
 
 // スワイプ
-class ViewController4: UITableViewController {
+class SwipeActionTableViewController: UITableViewController {
     var texts = ["Hello", "World", "Hoge", "Foo", "Bar", "Baz"]
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class ViewController4: UITableViewController {
 }
 
 // DataSourde
-extension ViewController4 {
+extension SwipeActionTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return texts.count
     }
@@ -37,7 +37,7 @@ extension ViewController4 {
 }
 
 // Delegate
-extension ViewController4 {
+extension SwipeActionTableViewController {
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal, title: "追加") { (action, view, completion) in
             self.texts.insert("Boo", at: indexPath.row)
